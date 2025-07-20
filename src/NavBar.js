@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useKey } from "./useKey";
 export function NavBar({ movies, setSearch, search }) {
   return (
