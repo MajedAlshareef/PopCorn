@@ -36,7 +36,7 @@ export function useMovies(search) {
           setIsLoading(true);
           setError("");
 
-          const res = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${search}`, {
+          const res = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&s=${search}`, {
             signal: controller.signal,
           });
           if (!res.ok) {
