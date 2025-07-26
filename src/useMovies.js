@@ -36,9 +36,12 @@ export function useMovies(search) {
           setIsLoading(true);
           setError("");
 
-          const res = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&s=${search}`, {
-            signal: controller.signal,
-          });
+          const res = await fetch(
+            `https://www.omdbapi.com/?apikey=${KEY}&s=${search}`,
+            {
+              signal: controller.signal,
+            }
+          );
           if (!res.ok) {
             throw new Error("something went wrong with the network");
           }
@@ -65,8 +68,8 @@ export function useMovies(search) {
       fetchMovies();
       return () => controller.abort();
     },
-    [search ]
+    [search]
   );
 
-  return {movies ,isLoading , error}
+  return { movies, isLoading, error };
 }
